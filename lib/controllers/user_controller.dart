@@ -5,8 +5,6 @@ import 'dart:convert';
 
 class UserController extends GetxController {
   final RxList users = [].obs;
-  final RxDouble latitude = 0.0.obs;
-  final RxDouble longitude = 0.0.obs;
   final Box uploadedImagesBox = Hive.box('uploaded_images');
 
   @override
