@@ -40,7 +40,8 @@ class HomePage extends StatelessWidget {
         ),
         title: const Text(
           'User Management App',
-          style: TextStyle(fontWeight: FontWeight.bold, fontSize: 25, color: Colors.white70),
+          style: TextStyle(
+              fontWeight: FontWeight.bold, fontSize: 25, color: Colors.white70),
         ),
         centerTitle: true,
       ),
@@ -51,7 +52,7 @@ class HomePage extends StatelessWidget {
     return Padding(
       padding: EdgeInsets.symmetric(horizontal: size.width * 0.05),
       child: Obx(
-            () => ListView.builder(
+        () => ListView.builder(
           padding: EdgeInsets.only(top: size.height * 0.02),
           itemCount: userController.users.length,
           itemBuilder: (context, index) {
@@ -89,7 +90,8 @@ class HomePage extends StatelessWidget {
               children: [
                 Text(
                   'Latitude: $latitude, Longitude: $longitude',
-                  style: const TextStyle(fontWeight: FontWeight.bold, fontSize: 16),
+                  style: const TextStyle(
+                      fontWeight: FontWeight.bold, fontSize: 16),
                 ),
                 const SizedBox(height: 8),
                 Text(
@@ -107,7 +109,6 @@ class HomePage extends StatelessWidget {
 
   Future<Map<String, dynamic>> _getCurrentLocation() async {
     try {
-
       bool serviceEnabled = await Geolocator.isLocationServiceEnabled();
       if (!serviceEnabled) {
         await Geolocator.openLocationSettings();
@@ -126,12 +127,9 @@ class HomePage extends StatelessWidget {
         return Future.error('Location permissions are permanently denied.');
       }
 
-
-
       Position position = await Geolocator.getCurrentPosition(
         desiredAccuracy: LocationAccuracy.high,
       );
-
 
       List<Placemark> placemarks = await placemarkFromCoordinates(
         position.latitude,

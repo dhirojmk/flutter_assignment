@@ -129,7 +129,7 @@ class UserCardState extends State<UserCard> {
       ],
       icon: Icon(
         Icons.cloud_upload,
-        color: Colors.deepPurple,
+        color: Colors.deepPurpleAccent,
         size: size.width * 0.06,
       ),
     );
