@@ -41,6 +41,7 @@ This guide will help you set up the project in Android Studio for development an
 
    ```bash
    git clone https://github.com/dhirojmk/flutter_assignment.git
+   this project build with latest Version plese upgrade your SDK version if required
    ```
 
 2. **Open the Project:**
